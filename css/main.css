@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.principal {
+    justify-content: center;
+    display: flex;
+    height: 800px;
+}
+
+.contenedor {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 90%;
+    /* max-width: 1000px;*/
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px;
+}
+
+body {
+    background-image: url("../img/2255.jpg");
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    /*porque tambien sera el elemento padre*/
+    justify-content: space-between;
+    align-items: center;
+    /*verticalmente ordenado*/
+    /*le ponemos wrap porque si no cabe el nav se pase abajo*/
+    /*podria pasar en pantalla celular q no entre el nav*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: tomato;
+}
+
+header .logo {
+    color: white;
+    font-size: 30px;
+}
+
+header .logo img {
+    width: 70px;
+    vertical-align: top;
+}
+
+header .logo a {
+    color: white;
+    text-decoration: none;
+    line-height: 70px;
+    /*siendo q la imagen media 100 px*/
+    /*line-height arregla que se aline al logo*/
+}
+
+
+/*nav es elemento padre de los home-blog-contact por eso llevara flex*/
+
+header nav {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header nav a {
+    background-color: orange;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    flex-grow: 1;
+    /*para que abarque el 100%*/
+}
+
+header nav a:hover {
+    background-color: red;
+}
+
+
+/*hay dos maneras 70 y30*/
+
+
+/*otra es en aside poner tamaño minimo*/
+
+
+/*asi solamente se achicaria el article*/
+
+.main {
+    background-color: peachpuff;
+    padding: 20px;
+    flex: 1 1 70%;
+    /*flex: 1 ;*/
+    /*tamaño q crece,decrece,width*/
+}
+
+
+/*aqui esta el problema*/
+
+.main article {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid #000;
+}
+
+
+/*q no le ponga border al ultimo->*/
+
+.main article:nth-last-child(1) {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+aside {
+    padding: 20px;
+    flex: 1 1 30%;
+    /*tamaño q crece,decrece,width*/
+    /*flex:0 0 430px;*/
+    /*para manipular a los hijos*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+aside .widget {
+    background-color: plum;
+    height: 150px;
+    margin: 10px;
+}
+
+footer {
+    background-color: tomato;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .links {
+    background-color: orange;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .links a {
+    flex-grow: 1;
+    /*para que abarque un 100%*/
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer .links a:hover {
+    background-color: red;
+}
+
+footer .social {
+    background-color: orange;
+}
+
+footer .social a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    /*porque no tiene flex la clase social*/
+}
+
+footer .social a:hover {
+    background-color: red;
+}
